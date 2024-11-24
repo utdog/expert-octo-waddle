@@ -1751,26 +1751,57 @@ img.pswp__img {
 .mobile-menus .dynamic-menu:nth-child(1) {
   margin-top: 0;
 }
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+.article-gallery-img {
+  position: relative;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-align: center;
 }
-.gallery-item {
-  width: calc(33.33% - 10px);
+.article-gallery-img img {
+  max-width: 100%;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  overflow: hidden;
 }
-.gallery-image {
+.article-gallery-img .img_alt {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+}
+.pswp {
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
 }
-.gallery-image:hover {
-  transform: scale(1.05);
+.pswp__button--close {
+  background-image: url("/img/icons/close.svg");
+  width: 44px;
+  height: 44px;
+}
+.pswp__button--arrow--left {
+  background-image: url("/img/icons/arrow-left.svg");
+  width: 44px;
+  height: 44px;
+}
+.pswp__button--arrow--right {
+  background-image: url("/img/icons/arrow-right.svg");
+  width: 44px;
+  height: 44px;
+}
+@media (max-width: 768px) {
+  .article-gallery-img img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .img_alt {
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 1468px) {
   html,
